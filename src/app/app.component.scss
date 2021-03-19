@@ -16,12 +16,14 @@
 }
 
 .content {
-	// display: flex;
 	flex: 1;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	// height: 100%;
+	.outle {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+	}
 }
 
 .footer {
