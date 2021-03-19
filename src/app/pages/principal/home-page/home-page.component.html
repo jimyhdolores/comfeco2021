@@ -1,0 +1,19 @@
+<div class="principal__container">
+	<h1 class="principal__title">Bienvenidos a Community Fest and Code</h1>
+	<h2 class="principal__subtitle">¡Conoce a gente, aprende y gana!</h2>
+	<div class="principal__description">
+		La próxima edición regresa en el 2022, en la cual se planea involucrar a todos los programadores
+		independientmente del area de conocimiento que se encuentre, todo con un mismo proposito,
+		aprender en comunidad.
+	</div>
+
+	<p class="principal__header">Ellos ya creen en esta iniciativa:</p>
+	<app-carousel class="carousel" [carouselItems]="sourceTeamLeader"></app-carousel>
+
+	<p class="principal__header">Sponsors</p>
+	<app-carousel-sponsors class="carousel" [carouselItems]="sourceSponsor"></app-carousel-sponsors>
+
+	<p class="principal__header">Prepárate, lo bueno está por empezar</p>
+	<app-counter class="counter"></app-counter>
+</div>
+<app-menu-community></app-menu-community>

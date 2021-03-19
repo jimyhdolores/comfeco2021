@@ -1,0 +1,19 @@
+.social-login{
+
+  &__text{
+    text-align: center;
+    margin-top: 1em;
+  }
+  
+  &__icons{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2em;
+  }
+  
+  &__icon{
+    height: 30px;
+    width: 30px;
+  }
+}

@@ -1,0 +1,46 @@
+.counter {
+	width: 100%;
+	display: flex;
+	justify-content: space-evenly;
+	position: relative;
+	top: 2.5em;
+	&__item {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		gap: 1em;
+		overflow-wrap: break-word;
+	}
+
+	&__number {
+		font-size: 5em;
+		height: auto;
+	}
+
+	&__word {
+		font-size: 2em;
+	}
+}
+
+@media only screen and (max-width: 468px) {
+	.counter {
+		&__number {
+			font-size: 4em;
+		}
+
+		&__word {
+			font-size: 2em;
+		}
+	}
+}
+@media only screen and (max-width: 416px) {
+	.counter {
+		&__number {
+			font-size: 2em;
+		}
+
+		&__word {
+			font-size: 1em;
+		}
+	}
+}

@@ -1,0 +1,15 @@
+<div class="container card" *ngIf="modeMovil == false">
+	<div class="container__titles">
+		<span>Eventos de tu interes</span>
+		<a class="url">Ver más</a>
+	</div>
+	<div class="container__items">
+		<app-item-event-user *ngFor="let item of listEvents" [item]="item"></app-item-event-user>
+	</div>
+</div>
+
+<div class="container-movil" *ngIf="modeMovil">
+	<div *ngFor="let item of listEvents" class="container-movil__item">
+		<app-item-event-user [item]="item"></app-item-event-user>
+	</div>
+</div>

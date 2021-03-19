@@ -1,0 +1,38 @@
+<app-card-container>
+	<form class="login-form" (ngSubmit)="login()">
+		<mat-form-field>
+			<mat-label>Correo electrónico</mat-label>
+			<input matInput placeholder="ejemplo@gmail.com" [(ngModel)]="email" name="email" />
+			<mat-icon matSuffix>mode_edit</mat-icon>
+		</mat-form-field>
+
+		<mat-form-field>
+			<mat-label>Contraseña</mat-label>
+			<input
+				matInput
+				placeholder="Contraseña"
+				[(ngModel)]="password"
+				name="password"
+				[type]="hidePassword ? 'password' : 'text'"
+			/>
+			<mat-icon matSuffix (click)="hidePassword = !hidePassword">{{
+				hidePassword ? 'visibility' : 'visibility_off'
+			}}</mat-icon>
+		</mat-form-field>
+
+		<label class="url" [routerLink]="['/login/recovery']">¿Olvidaste tu contraseña?</label>
+		<button mat-raised-button color="primary" [disabled]="isLoading" class="login-button">
+			Log in
+		</button>
+
+		<div class="login-slide">
+			<mat-slide-toggle>Mantener sesión</mat-slide-toggle>
+		</div>
+
+		<app-social-login
+			text="¿Aún no eres miembro?"
+			textLink="Regístrate"
+			link="/login/register"
+		></app-social-login>
+	</form>
+</app-card-container>

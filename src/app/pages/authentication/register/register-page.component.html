@@ -1,0 +1,127 @@
+<app-card-container>
+	<div class="inputs">
+		<form [formGroup]="registerForm" (ngSubmit)="newUser()" class="register__form">
+			<mat-form-field appearance="legacy">
+				<mat-label> Nombre de Usuario </mat-label>
+				<input matInput placeholder=" Nombre de Usuario " formControlName="userName" />
+				<mat-icon matSuffix> account_circle </mat-icon>
+				<mat-error
+					*ngIf="
+						registerFormControl.userName.touched && registerFormControl.userName.errors?.required
+					"
+				>
+					Nombre de usuario es requerido
+				</mat-error>
+				<mat-error
+					*ngIf="
+						registerFormControl.userName.touched &&
+						registerFormControl.userName.errors?.userNameNotAvailable
+					"
+				>
+					Nombre de usuario no válido
+				</mat-error>
+			</mat-form-field>
+			<mat-form-field appearance="legacy">
+				<mat-label> Correo Electronico </mat-label>
+				<input matInput placeholder=" Correo Electronico " formControlName="email" />
+				<mat-icon matSuffix> alternate_email_24p </mat-icon>
+				<mat-error
+					*ngIf="registerFormControl.email.touched && registerFormControl.email.errors?.required"
+				>
+					Correo electrónico es requerido
+				</mat-error>
+				<mat-error
+					*ngIf="registerFormControl.email.touched && registerFormControl.email.errors?.email"
+				>
+					Ingrese un correo electrónico válido
+				</mat-error>
+			</mat-form-field>
+
+			<mat-form-field appearance="legacy">
+				<mat-label> Contraseña </mat-label>
+				<input
+					matInput
+					placeholder=" Contraseña "
+					formControlName="pass"
+					[type]="hidePassword ? 'password' : 'text'"
+				/>
+				<mat-icon matSuffix (click)="hidePassword = !hidePassword"
+					>{{ hidePassword ? 'visibility' : 'visibility_off' }}
+				</mat-icon>
+				<mat-error
+					*ngIf="registerFormControl.pass.touched && registerFormControl.pass.errors?.required"
+				>
+					Contraseña es obligatoria
+				</mat-error>
+				<mat-error
+					*ngIf="
+						registerFormControl.pass.touched && registerFormControl.pass.errors?.invalidPassword
+					"
+				>
+					Contraseña es obligatoria
+				</mat-error>
+			</mat-form-field>
+
+			<mat-form-field appearance="legacy">
+				<mat-label> Confirmar Contraseña </mat-label>
+				<input
+					matInput
+					placeholder=" Confirmar Contraseña "
+					formControlName="confirmPass"
+					[type]="hideConfirmPassword ? 'password' : 'text'"
+				/>
+				<mat-icon matSuffix (click)="hideConfirmPassword = !hideConfirmPassword"
+					>{{ hideConfirmPassword ? 'visibility' : 'visibility_off' }}
+				</mat-icon>
+				<mat-error
+					*ngIf="
+						registerFormControl.confirmPass.touched &&
+						registerFormControl.confirmPass.errors?.required
+					"
+				>
+					Confirmar contraseña es obligatorio
+				</mat-error>
+				<mat-error
+					*ngIf="
+						registerFormControl.confirmPass.touched &&
+						registerFormControl.confirmPass.errors?.passwordMismatch
+					"
+				>
+					Las contraseñas no coindicen
+				</mat-error>
+			</mat-form-field>
+
+			<div class="terms">
+				<section class="register__check">
+					<mat-checkbox color="primary" formControlName="termsCheck"> </mat-checkbox>
+					<p>
+						Acepto los
+						<a (click)="clickModalTerms()">
+							<strong> terminos y condiciones </strong>
+						</a>
+						de uso de la politica de proteccion de datos. <br />
+						recibiras confirmacion del registro a traves del correo electronico.
+					</p>
+				</section>
+			</div>
+			<br />
+			<div class="buttons">
+				<button
+					mat-raised-button
+					type="submit"
+					color="primary"
+					class="register__button"
+					[disabled]="!registerForm.valid"
+				>
+					{{ declarations.button }}
+				</button>
+				<a [routerLink]="['login']" class="back"> {{ declarations.enlace }} </a>
+			</div>
+		</form>
+		<app-social-login
+			text="¿Ya tienes cuenta?"
+			textLink="Inicia sesión"
+			link="/login"
+		></app-social-login>
+	</div>
+</app-card-container>

@@ -1,0 +1,25 @@
+<mat-card class="card">
+	<img src="assets/images/person.png" class="navbar-brand__item-logo" alt="Team Angular 31" />
+	<div class="card__content">
+		<div class="titles">
+			<span class="titles__name">{{ profile.name }}</span>
+			<span *ngIf="profile.area" class="titles__area"> {{ profile.area }}</span>
+		</div>
+
+		<p *ngIf="profile.biography" class="biography">
+			{{ profile.biography }}
+		</p>
+		<div *ngIf="profile.redSocial" class="red-social">
+			<img src="assets/svg/facebook.svg" alt="Ir a facebook" />
+			<img src="assets/svg/twitter.svg" alt="Ir a twitter" />
+			<img src="assets/svg/linkedin.svg" alt="Ir a Linkedin" />
+			<img src="assets/svg/git_hub.svg" alt="Ir a gitHub" />
+		</div>
+		<span *ngIf="!profile.redSocial"> Actualiza tus Redes Sociales </span>
+		<label class="url" *ngIf="showMessageInsignia()">Completa tu Perfil y gana una insignia!</label>
+		<div class="footer">
+			<hr class="hr" />
+			<label for="" class="label no-select" (click)="clickEdit()">Editar Perfil</label>
+		</div>
+	</div>
+</mat-card>

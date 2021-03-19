@@ -1,0 +1,13 @@
+<div class="container">
+	<div class="member">
+		<div class="member__item">
+			<div [ngStyle]="{ 'background-image': 'url(' + itemMember.photo + ')' }" class="image"></div>
+			<div class="align">
+				<label class="align__name"> {{ itemMember.name }} </label>
+				<label class="align__experience"> {{ itemMember.experience }} </label>
+			</div>
+		</div>
+		<label class="member__type"> {{ itemMember.type }} </label>
+	</div>
+	<hr />
+</div>

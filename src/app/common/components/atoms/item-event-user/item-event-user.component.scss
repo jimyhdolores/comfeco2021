@@ -1,0 +1,33 @@
+@import '../../../../../assets/scss/variables.scss';
+
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	&__image {
+		max-width: 300px;
+		height: 140px;
+		max-height: 140px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		border-radius: inherit;
+	}
+	&__not-found {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-items: center;
+
+		.not-found-icon {
+			font-size: 5em;
+			color: $color-secondary;
+		}
+	}
+	&__actions {
+		display: flex;
+		gap: 10px;
+	}
+	span {
+		font-weight: 500;
+	}
+}

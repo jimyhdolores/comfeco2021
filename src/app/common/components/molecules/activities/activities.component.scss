@@ -1,0 +1,15 @@
+.empty {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	img {
+		width: 4em;
+	}
+}
+
+.container-items {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}

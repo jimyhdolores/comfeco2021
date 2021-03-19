@@ -1,0 +1,67 @@
+@import '../../../../../../../assets/scss/variables.scss';
+.profile {
+	width: 100%;
+	height: 100%;
+	&__form {
+		display: grid;
+		grid-template: repeat(3, auto) / repeat(4, auto);
+		grid-gap: 1em;
+	}
+	&__card {
+		margin: 0 auto;
+		grid-column: 1;
+		grid-row: 1;
+	}
+	&__activities {
+		margin: 0 auto;
+		grid-column: 2 / span 2;
+		grid-row: 1 / span 3;
+	}
+	&__badge {
+		margin: 0 auto;
+		grid-column: 1;
+		grid-row: 2 / span 1;
+	}
+	&__events {
+		margin: 0 auto;
+		grid-column: 4;
+		grid-row: 1 / span 3;
+	}
+}
+
+.material-icons {
+	color: $color-primary;
+}
+
+.expand {
+	width: 60em;
+
+	.profile__card {
+		@extend .center-item;
+
+		gap: 1em;
+		width: 100%;
+	}
+}
+
+.center-item {
+	display: inline-flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+@media only screen and (max-width: 840px) {
+	.expand {
+		width: auto;
+	}
+}
+@media only screen and (max-width: 659px) {
+	.expand {
+		.profile__card {
+			display: flex;
+			flex-direction: column;
+			gap: 1em;
+			width: 100%;
+		}
+	}
+}

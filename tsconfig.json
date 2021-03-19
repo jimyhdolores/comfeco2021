@@ -1,0 +1,49 @@
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+      "@team31/components-atoms/*": [
+        "src/app/common/components/atoms/*"
+      ],
+      "@team31/components-molecules/*": [
+        "src/app/common/components/molecules/*"
+      ],
+      "@team31/models/*": [
+        "src/app/common/models/*"
+      ],
+      "@team31/services/*": [
+        "src/app/common/services/*"
+      ],
+      "@team31/static/*": [
+        "src/app/common/static/*"
+      ],
+    },
+    "outDir": "./dist/out-tsc",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "es2020",
+    "lib": [
+      "es2018",
+      "dom"
+    ]
+  },
+  "angularCompilerOptions": {
+    "enableI18nLegacyMessageIdFormat": false,
+    "strictInjectionParameters": true,
+    "strictInputAccessModifiers": true,
+    "strictTemplates": true
+  },
+}

@@ -1,0 +1,67 @@
+@import '../../../../../assets/scss/variables.scss';
+
+.container {
+	position: fixed;
+
+	z-index: 1;
+	top: 20em;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	left: 0;
+
+	background: #ffffff;
+	border-radius: 15px;
+	filter: drop-shadow(0px 6px 6px rgba(0, 0, 0, 0.26));
+	&__menu {
+		background-color: #ff5722;
+		border-top-right-radius: 1em;
+		border-bottom-right-radius: 1em;
+		cursor: pointer;
+		display: inline-flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 3px 10px 3px 10px;
+
+		span {
+			color: white !important;
+		}
+	}
+
+	&__items {
+		padding: 1em;
+	}
+	hr {
+		border-top: 1px solid #b6b7b7;
+		width: 100%;
+	}
+
+	span {
+		cursor: pointer;
+		font-weight: bold;
+		color: $color-url;
+	}
+
+	&.show {
+		width: 17em;
+		height: 31em;
+		transition: 200ms;
+	}
+
+	&.hidden {
+		width: 4em;
+		height: 0;
+		transition: 120ms;
+	}
+
+	:focus {
+		background-color: red;
+	}
+}
+
+mat-icon {
+	color: white;
+	font-size: 2em;
+	height: 28px;
+	width: 28px;
+}

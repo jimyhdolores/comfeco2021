@@ -1,0 +1,27 @@
+<div class="contenedor__carousel" [ngStyle]="{ 'max-width': responsiCarousel }">
+	<ngu-carousel #myCarousel [inputs]="carouselConfig" [dataSource]="carouselItems">
+		<div *nguCarouselDef="let item" class="item">
+			<!-- <img [src]="item.photo" alt="" class="image" /> -->
+			<div class="carousel__item">
+				<div
+					[ngStyle]="{ 'background-image': 'url(' + item.photo + ')' }"
+					alt=""
+					class="image"
+				></div>
+			</div>
+		</div>
+		<button NguCarouselNext class="rightRs material-icons">
+			<span class="material-icons"> keyboard_arrow_right </span>
+		</button>
+		<button NguCarouselPrev class="leftRs">
+			<span class="material-icons"> keyboard_arrow_left </span>
+		</button>
+		<ul class="myPoint" NguCarouselPoint>
+			<li
+				*ngFor="let item of myCarousel.pointNumbers; let j = index"
+				[class.active]="j == myCarousel.activePoint"
+				(click)="myCarousel.moveTo(j)"
+			></li>
+		</ul>
+	</ngu-carousel>
+</div>

@@ -1,0 +1,51 @@
+<div class="profile__form" *ngIf="showExpand == false">
+	<div class="profile__card">
+		<app-card-profile [profile]="dataProfile"></app-card-profile>
+	</div>
+	<div class="profile__badge">
+		<app-my-insignia [name]="insignia.name" [urlImage]="insignia.urlImage"></app-my-insignia>
+	</div>
+	<div class="profile__activities">
+		<app-activities [activities]="listActivities"></app-activities>
+	</div>
+	<div class="profile__events">
+		<app-events-user></app-events-user>
+	</div>
+</div>
+
+<div class="expand" *ngIf="showExpand">
+	<mat-accordion>
+		<mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+			<mat-expansion-panel-header>
+				<mat-panel-title>
+					<span class="material-icons"> account_circle </span> Perfil
+				</mat-panel-title>
+			</mat-expansion-panel-header>
+
+			<div class="profile__card">
+				<app-card-profile [profile]="dataProfile"></app-card-profile>
+				<app-my-insignia [name]="insignia.name" [urlImage]="insignia.urlImage"></app-my-insignia>
+			</div>
+		</mat-expansion-panel>
+
+		<mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+			<mat-expansion-panel-header>
+				<mat-panel-title>
+					<span class="material-icons"> assignment </span> Actividades
+				</mat-panel-title>
+			</mat-expansion-panel-header>
+			<div class="profile__activities">
+				<app-activities [activities]="listActivities"></app-activities>
+			</div>
+		</mat-expansion-panel>
+
+		<mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+			<mat-expansion-panel-header>
+				<mat-panel-title> <span class="material-icons"> stars </span> Eventos </mat-panel-title>
+			</mat-expansion-panel-header>
+			<div class="profile__events">
+				<app-events-user [modeMovil]="showExpand"></app-events-user>
+			</div>
+		</mat-expansion-panel>
+	</mat-accordion>
+</div>

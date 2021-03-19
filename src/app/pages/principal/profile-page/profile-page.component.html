@@ -1,0 +1,22 @@
+<div class="container">
+	<app-sub-menu></app-sub-menu>
+	<span class="container__title-submenu">{{ titleSubMenu }}</span>
+	<app-submodule-profile
+		*ngIf="nameComponeny === 'Mi Perfil'"
+		[@inOutAnimation]
+	></app-submodule-profile>
+	<app-user-edit *ngIf="nameComponeny === 'Editar Perfil'" [@inOutAnimation]></app-user-edit>
+	<app-submodule-events
+		*ngIf="nameComponeny === 'Eventos'"
+		[@inOutAnimation]
+	></app-submodule-events>
+	<app-submodule-groups
+		class="groups"
+		*ngIf="nameComponeny === 'Grupos'"
+		[@inOutAnimation]
+	></app-submodule-groups>
+	<app-submodule-insignia
+		*ngIf="nameComponeny === 'Insignias'"
+		[@inOutAnimation]
+	></app-submodule-insignia>
+</div>

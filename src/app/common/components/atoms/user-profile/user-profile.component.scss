@@ -1,0 +1,53 @@
+@import '../../../../../assets/scss/variables.scss';
+.container {
+	display: flex;
+	gap: 2em;
+	align-items: center;
+	font-size: 18px;
+	color: white;
+
+	mat-icon {
+		color: $color-text-alternative;
+	}
+
+	&__profile {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		background: rgba(0, 0, 0, 0.19);
+		border-radius: 1.5em;
+		padding-left: 10px;
+		cursor: pointer;
+
+		label {
+			cursor: pointer;
+		}
+		img {
+			height: 3em;
+			border-radius: 50%;
+		}
+	}
+}
+
+.mat-menu-item {
+	color: $color-text;
+}
+
+@media only screen and (max-width: 812px) {
+	.container {
+		gap: 18px;
+	}
+}
+
+@media only screen and (max-width: 945px) {
+	.container {
+		font-size: 19px;
+	}
+}
+
+@media only screen and (max-width: 860px) {
+	.container {
+		font-size: 16px;
+		padding-top: 8px;
+	}
+}

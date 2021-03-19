@@ -1,0 +1,19 @@
+<div
+	class="container"
+	[ngClass]="{ show: this.showMenu, hidden: !this.showMenu }"
+	(blur)="focuslost()"
+	tabindex="0"
+>
+	<div class="container__menu" (click)="showMenuComunnity()">
+		<span *ngIf="showMenu" class="no-select">Comunidades</span>
+		<mat-icon aria-hidden="false" aria-label="mennu groups" color="white" class="no-select"
+			>groups</mat-icon
+		>
+	</div>
+	<div *ngIf="showMenu" class="container__items">
+		<app-item-community *ngFor="let item of listCommunity" [item]="item"></app-item-community>
+	</div>
+
+	<hr *ngIf="showMenu" />
+	<span *ngIf="showMenu" class="no-select">Ver más</span>
+</div>

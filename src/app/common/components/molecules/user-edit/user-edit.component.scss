@@ -1,0 +1,101 @@
+@import '../../../../../assets/scss/variables.scss';
+::ng-deep .mat-form-field-appearance-fill .mat-form-field-flex {
+	background-color: #fff;
+}
+.card {
+	display: flex;
+	flex-direction: column;
+	width: 800px;
+	box-shadow: 0px 4px 17px 5px #b6b7b7;
+	border-radius: 19px;
+
+	&__header {
+		display: flex;
+		width: 100%;
+		flex-direction: column;
+		justify-items: center;
+		align-items: center;
+		gap: 0.5em;
+
+		&-back{
+			color: $color-secondary;
+			position: absolute;
+			top: 10%;
+			left: 7%;
+			font-size: 4em;
+			cursor: pointer;
+		}
+
+		.card_user_image {
+			width: 150px;
+			border-radius: 50%;
+		}
+
+		.camera {
+			font-size: 40px;
+			color: $color-primary;
+			cursor: pointer;
+		}
+		margin: 2em 0;
+	}
+
+	&__form {
+		display: flex;
+		flex-direction: column;
+		width: 90%;
+		margin: auto;
+		justify-content: center;
+		align-content: center;
+		gap: 1em;
+
+		&-uno {
+			display: grid;
+			justify-content: space-between;
+			grid-template-columns: 48% 48%;
+		}
+
+		&-dos {
+			display: grid;
+			grid-template-columns: 32% 32% 32%;
+			justify-content: space-between;
+		}
+
+		&-tres {
+			display: grid;
+			grid-template-columns: 100%;
+		}
+
+		&-password {
+			display: grid;
+
+			.actual-password {
+				display: flex;
+				width: 50%;
+				height: 35px;
+				gap: 2em;
+			}
+			.passwords {
+				margin-top: 1.5em;
+				display: grid;
+				justify-content: space-between;
+				grid-template-columns: 48% 48%;
+			}
+		}
+
+		&-social {
+			display: grid;
+			grid-template-columns: 48% 48%;
+			justify-content: space-between;
+		}
+
+		&-biography {
+			display: grid;
+			grid-template-columns: 100%;
+		}
+
+		&-buttons {
+			text-align: right;
+			margin-bottom: 2em;
+		}
+	}
+}

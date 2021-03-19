@@ -1,0 +1,20 @@
+<mat-card class="card">
+	<img mat-card-image [src]="item.urlImage" alt="" />
+
+	<mat-card-content class="card__title">
+		<label for="" class="title">{{ item.name }}</label>
+		<label for="">{{ item.description }}</label>
+	</mat-card-content>
+
+	<mat-card-actions class="card__actions">
+		<button mat-button>Más información</button>
+		<button
+			mat-raised-button
+			color="primary"
+			(click)="clickParticipate()"
+			[disabled]="item.disabled"
+		>
+			Participar
+		</button>
+	</mat-card-actions>
+</mat-card>

@@ -1,0 +1,25 @@
+<header class="container" *ngIf="(showHeader || showHeader === false) && showMenuMovil == false">
+	<a
+		*ngIf="showMenuMovil == false"
+		href="https://www.comfeco.com/"
+		class="container__logo"
+		target="_blank"
+	>
+		<img src="assets/svg/LogoComfeco.svg" alt="Logo de Comfeco" title="Ir a Comfeco" />
+	</a>
+	<div class="container__menu" *ngIf="showHeader">
+		<app-nav-menu></app-nav-menu>
+		<app-user-profile></app-user-profile>
+	</div>
+</header>
+
+<header class="container-movil" *ngIf="showHeader && showMenuMovil">
+	<app-nav-menu-movil></app-nav-menu-movil>
+	<app-user-profile></app-user-profile>
+</header>
+
+<header class="container-movil" *ngIf="showHeader === false && showMenuMovil">
+	<a href="https://www.comfeco.com/" class="container__logo" target="_blank">
+		<img src="assets/svg/LogoComfeco.svg" alt="Logo de Comfeco" title="Ir a Comfeco" />
+	</a>
+</header>

@@ -1,0 +1,52 @@
+@import '../../../../../../../assets/scss/variables.scss';
+
+.container {
+	display: flex;
+	gap: 1em;
+	div {
+		display: flex;
+		align-items: center;
+		border: 1px solid $color-blue-alternative;
+		box-sizing: border-box;
+		border-radius: 12px;
+		padding: 5px;
+		font-size: 18px;
+		gap: 0.5em;
+		cursor: pointer;
+		img {
+			width: 2em;
+		}
+
+		&.selected {
+			background-color: $color-primary;
+			color: white;
+			border: none;
+			transition: 700ms;
+		}
+		&:not(.selected):hover {
+			background-color: $color-secondary-ligth;
+			border: 1px solid $color-secondary;
+		}
+	}
+}
+
+@media only screen and (max-width: 550px) {
+	.container {
+		div {
+			font-size: 16px;
+		}
+	}
+}
+@media only screen and (max-width: 483px) {
+	.container {
+		div {
+			border-radius: 50%;
+			transition: 700ms;
+		}
+		.name-submenu {
+			visibility: hidden;
+			width: 0;
+			position: absolute;
+		}
+	}
+}

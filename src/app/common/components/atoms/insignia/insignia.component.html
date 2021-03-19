@@ -1,0 +1,15 @@
+<mat-card class="card">
+	<img [src]="item.urlImage" class="image" alt="Team Angular 31" />
+	<div class="name">
+		<mat-card-title>{{ item.name }}</mat-card-title>
+		<p>{{ item.description }}</p>
+	</div>
+
+	<mat-card-content>
+		<hr />
+		<div class="how">
+			<mat-card-title>¿Cómo Ganarla?</mat-card-title>
+			<p [innerHTML]="item.howToWin"></p>
+		</div>
+	</mat-card-content>
+</mat-card>

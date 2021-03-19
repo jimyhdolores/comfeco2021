@@ -1,0 +1,81 @@
+@import '../../../../../assets/scss/variables.scss';
+.card-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    width: 25em;
+    box-shadow: 0px 4px 17px 5px $color-shadow;
+    border-radius: 23px;
+    gap: 1em;
+    .frame-container {
+        height: 190px;
+        &__frame1,
+        &__frame2,
+        &__frame3,
+        &__logo {
+            height: 190px;
+            width: 100%;
+            position: sticky;
+            bottom: 158%;
+        }
+        &__frame1 {
+            background: linear-gradient(159deg, $color-secondary 52.79%, rgba(255, 105, 68, 0) 53.2%);
+            border-radius: 22px 22px 0px 0px;
+        }
+        &__frame2 {
+            background: linear-gradient(208deg, $color-primary 37.5%, rgba(255, 87, 50, 0) 37.2%);
+            border-radius: 19px;
+        }
+        &__frame3 {
+            background: conic-gradient( from 90deg at 66% 42.26%, #ffd4c3 0deg, #ffd4c3 29.5deg, rgb(255 212 195 / 0%) 30.54deg, rgba(255, 212, 195, 0) 364deg);
+        }
+        &__logo {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+    }
+    .body {
+        padding: 1em;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        width: 20em;
+        .frame-container {
+            height: 190px;
+            &__frame1,
+            &__frame2,
+            &__frame3,
+            &__logo {
+                height: 190px;
+                width: 100%;
+                position: sticky;
+                bottom: 138%;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .card-container {
+        display: flex;
+        flex-direction: column;
+        width: 25em;
+        .frame-container {
+            height: 190px;
+            &__frame1,
+            &__frame2,
+            &__frame3,
+            &__logo {
+                height: 190px;
+                width: 100%;
+                position: sticky;
+                bottom: 158%;
+            }
+        }
+    }
+}

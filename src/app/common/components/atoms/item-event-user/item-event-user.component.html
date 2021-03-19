@@ -1,0 +1,17 @@
+<div class="container">
+	<div
+		[ngStyle]="{ 'background-image': 'url(' + item.urlImage + ')' }"
+		alt=""
+		class="container__image"
+		*ngIf="item.urlImage"
+	></div>
+	<div class="container__not-found" *ngIf="!item.name">
+		<span class="material-icons not-found-icon"> mood_bad </span>
+		<span>Aún no tienes eventos. <span class="url">Descúbrelos</span></span>
+	</div>
+	<span *ngIf="item.name">{{ item.name }}</span>
+	<div class="container__actions" *ngIf="item.name">
+		<button mat-stroked-button color="warn">Abandonar</button>
+		<button mat-raised-button color="primary">Más información</button>
+	</div>
+</div>

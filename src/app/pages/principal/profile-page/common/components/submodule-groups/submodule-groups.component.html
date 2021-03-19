@@ -1,0 +1,32 @@
+<div class="container__groups" *ngIf="showExpand === false">
+	<div class="container__groups__left">
+		<app-my-group></app-my-group>
+	</div>
+	<div class="container__groups__right">
+		<app-groups></app-groups>
+	</div>
+</div>
+
+<div class="expand" *ngIf="showExpand">
+	<mat-accordion>
+		<mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+			<mat-expansion-panel-header>
+				<mat-panel-title>
+					<span class="material-icons"> account_circle </span> Mi grupo
+				</mat-panel-title>
+			</mat-expansion-panel-header>
+			<div class="my-group">
+				<app-my-group></app-my-group>
+			</div>
+		</mat-expansion-panel>
+
+		<mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+			<mat-expansion-panel-header>
+				<mat-panel-title> <span class="material-icons"> assignment </span> Grupos </mat-panel-title>
+			</mat-expansion-panel-header>
+			<div class="group">
+				<app-groups></app-groups>
+			</div>
+		</mat-expansion-panel>
+	</mat-accordion>
+</div>

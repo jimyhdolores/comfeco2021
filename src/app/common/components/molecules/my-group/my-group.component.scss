@@ -1,0 +1,86 @@
+@import './../../../../../assets/scss/variables.scss';
+
+.container {
+	display: flex;
+}
+
+.mat-card-header {
+	display: flex;
+	flex-direction: column;
+	gap: 3em;
+}
+
+.mat-card {
+	width: 24em;
+	height: auto;
+	box-shadow: 0px 4px 17px 5px #b6b7b7;
+	border-radius: 19px;
+	display: flex;
+	flex-direction: column;
+	gap: 4em;
+}
+
+.mat-card-content {
+	display: block;
+	margin-bottom: 16px;
+	flex: 1;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	line-height: 0;
+	&__migrupo {
+		font-size: 1.2em;
+		color: $color-text-alternative;
+	}
+	&__iralgrupo {
+		font-size: 1.2em;
+		color: $color-url;
+	}
+}
+
+.rectangle {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: $color-primary;
+	border-radius: 30px;
+	width: 90%;
+	height: 52px;
+	align-self: center;
+	padding-left: 1em;
+	padding-right: 1em;
+	&__text {
+		font-size: 16px;
+		color: #ffff;
+	}
+	&__image {
+		width: 25.18px;
+		height: 24.93px;
+		border-radius: 50%;
+	}
+}
+
+.footer {
+	display: flex;
+	justify-content: space-evenly;
+}
+@media screen and (max-width: 416px) {
+	.mat-card {
+		width: auto;
+		gap: 2em;
+	}
+
+	.mat-card-header {
+		gap: 2em;
+	}
+
+	.container {
+		.header__migrupo,
+		.header__iralgrupo,
+		.rectangle {
+			font-size: 1em;
+		}
+	}
+}

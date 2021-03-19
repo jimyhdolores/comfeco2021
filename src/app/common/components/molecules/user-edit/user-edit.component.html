@@ -1,0 +1,235 @@
+<mat-card class="card">
+	<mat-card-header>
+		<div class="card__header">
+			<span class="material-icons card__header-back" (click)="backToProfile()">
+				keyboard_backspace
+			</span>
+
+			<img
+				src="assets/images/team-leaders/angular-nicolas-molina.jpg"
+				alt=""
+				class="card_user_image"
+			/>
+			<span class="material-icons camera"> camera_alt </span>
+		</div>
+	</mat-card-header>
+	<mat-card-content>
+		<form [formGroup]="profileForm" (ngSubmit)="saveProfile()">
+			<div class="card__form">
+				<div class="card__form-uno">
+					<mat-form-field class="card__form-nick">
+						<mat-label>Nick</mat-label>
+						<input matInput formControlName="nick" />
+						<mat-error
+							*ngIf="
+								getProfileFormControl.nick.touched && getProfileFormControl.nick.errors?.required
+							"
+						>
+							Nick es requerido
+						</mat-error>
+						<mat-error
+							*ngIf="
+								getProfileFormControl.nick.touched && getProfileFormControl.nick.errors?.minlength
+							"
+						>
+							Nick no válido. Mínimo 4 caracteres
+						</mat-error>
+					</mat-form-field>
+
+					<mat-form-field appearance="legacy" class="card__form-nick">
+						<mat-label>Correo</mat-label>
+						<input matInput placeholder="Placeholder" formControlName="email" />
+						<mat-icon matSuffix>alternate_email</mat-icon>
+					</mat-form-field>
+				</div>
+
+				<div class="card__form-dos">
+					<mat-form-field appearance="fill">
+						<mat-label>Genero</mat-label>
+						<mat-select formControlName="idGender">
+							<mat-option *ngFor="let gender of listGender" [value]="gender.id">{{
+								gender.value
+							}}</mat-option>
+						</mat-select>
+					</mat-form-field>
+
+					<mat-form-field appearance="fill">
+						<mat-label>Fecha de nacimiento</mat-label>
+						<input matInput [matDatepicker]="picker" formControlName="dateB" />
+						<mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+						<mat-datepicker #picker></mat-datepicker>
+					</mat-form-field>
+
+					<mat-form-field appearance="fill">
+						<mat-label>País</mat-label>
+						<mat-select formControlName="idCountry">
+							<mat-option *ngFor="let country of listCountry" [value]="country.id">{{
+								country.value
+							}}</mat-option>
+						</mat-select>
+					</mat-form-field>
+				</div>
+
+				<div class="card__form-tres">
+					<mat-form-field appearance="fill">
+						<mat-label>Área de conocimiento</mat-label>
+						<mat-select formControlName="idArea">
+							<mat-option *ngFor="let area of listArea" [value]="area.id">{{
+								area.value
+							}}</mat-option>
+						</mat-select>
+					</mat-form-field>
+				</div>
+
+				<div class="card__form-password">
+					<mat-slide-toggle (change)="toggleVerifyPassword($event)"
+						>Cambiar contraseña</mat-slide-toggle
+					>
+					<form [formGroup]="passwordsForm">
+						<div *ngIf="showVerifyPassword">
+							<div class="actual-password">
+								<mat-form-field>
+									<mat-label>Contraseña</mat-label>
+									<input
+										matInput
+										placeholder="Contraseña"
+										name="password"
+										formControlName="password"
+										[type]="hidePassword ? 'password' : 'text'"
+									/>
+									<mat-icon matSuffix (click)="hidePassword = !hidePassword">{{
+										hidePassword ? 'visibility' : 'visibility_off'
+									}}</mat-icon>
+								</mat-form-field>
+
+								<button mat-raised-button color="primary" type="button" (click)="verifyPassword()">
+									Verificar
+								</button>
+							</div>
+						</div>
+
+						<div class="passwords" *ngIf="showNewPassword">
+							<mat-form-field>
+								<mat-label>Contraseña</mat-label>
+								<input
+									matInput
+									placeholder="Contraseña"
+									name="password"
+									formControlName="newPassword"
+									[type]="hideNewPassword ? 'password' : 'text'"
+								/>
+								<mat-icon matSuffix (click)="hideNewPassword = !hideNewPassword">{{
+									hideNewPassword ? 'visibility' : 'visibility_off'
+								}}</mat-icon>
+								<mat-error
+									*ngIf="
+										getPasswordsFormControl.newPassword.touched &&
+										getPasswordsFormControl.newPassword.errors?.minlength
+									"
+								>
+									La contraseña debe tener mínimo 6 caracteres
+								</mat-error>
+							</mat-form-field>
+
+							<mat-form-field>
+								<mat-label>Contraseña</mat-label>
+								<input
+									matInput
+									placeholder="Contraseña"
+									name="password"
+									formControlName="confirmPassword"
+									[type]="hideConfirmPassword ? 'password' : 'text'"
+								/>
+								<mat-icon matSuffix (click)="hideConfirmPassword = !hideConfirmPassword">{{
+									hideNewPassword ? 'visibility' : 'visibility_off'
+								}}</mat-icon>
+								<mat-error
+									*ngIf="
+										getPasswordsFormControl.confirmPassword.touched &&
+										getPasswordsFormControl.confirmPassword.errors?.minlength
+									"
+								>
+									La contraseña debe tener mínimo 6 caracteres
+								</mat-error>
+							</mat-form-field>
+							<mat-error
+								*ngIf="
+									getPasswordsFormControl.confirmPassword.touched &&
+									getPasswordsFormControl.confirmPassword.errors?.passwordMismatch
+								"
+							>
+								Las contraseñas no coindicen
+							</mat-error>
+						</div>
+					</form>
+				</div>
+
+				<div class="card__form-social" formGroupName="redSocial">
+					<mat-form-field>
+						<mat-label>&nbsp; Facebook</mat-label>
+
+						<span matPrefix>
+							<mat-icon>facebook</mat-icon>
+							<strong>facebook.com/</strong>
+						</span>
+						<input type="text" matInput formControlName="facebook" />
+					</mat-form-field>
+
+					<mat-form-field>
+						<mat-label>&nbsp; Github</mat-label>
+
+						<span matPrefix>
+							<mat-icon>github</mat-icon>
+							<strong>github.com/</strong>
+						</span>
+						<input type="tel" matInput formControlName="github" />
+					</mat-form-field>
+
+					<mat-form-field>
+						<mat-label>&nbsp; LinkedIn</mat-label>
+
+						<span matPrefix>
+							<mat-icon>linkedin</mat-icon>
+							<strong>linkedin.com/in/</strong>
+						</span>
+						<input type="tel" matInput formControlName="linkedin" />
+					</mat-form-field>
+
+					<mat-form-field>
+						<mat-label>&nbsp; Twitter</mat-label>
+
+						<span matPrefix>
+							<mat-icon>twitter</mat-icon>
+							<strong>twitter.com/</strong>
+						</span>
+						<input type="tel" matInput formControlName="twitter" />
+					</mat-form-field>
+				</div>
+
+				<div class="card__form-biography">
+					<mat-form-field>
+						<mat-label>Biografía</mat-label>
+						<textarea
+							matInput
+							placeholder="¡Queremos saber más de ti!"
+							formControlName="biography"
+							type="text"
+						></textarea>
+					</mat-form-field>
+				</div>
+
+				<div class="card__form-buttons">
+					<button
+						mat-raised-button
+						color="primary"
+						[disabled]="!profileForm.valid || (this.showNewPassword && !this.passwordsForm.valid)"
+						type="submit"
+						[disabled]="isLoading"
+					>
+						Guardar cambios
+					</button>
+				</div>
+			</div>
+		</form>
+	</mat-card-content>
+</mat-card>

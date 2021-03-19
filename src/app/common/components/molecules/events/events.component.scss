@@ -1,0 +1,40 @@
+@import '../../../../../assets/scss/variables.scss';
+.card {
+	max-width: 512px;
+
+	&__title {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+		.title {
+			color: $color-text-alternative;
+			font-size: 18px;
+			font-weight: 400;
+		}
+	}
+
+	&__actions {
+		display: flex;
+		justify-content: space-between;
+	}
+}
+
+.mat-button {
+	color: $color-url;
+}
+
+@media only screen and (max-width: 575px) {
+	.card {
+		max-width: 25em;
+	}
+}
+@media only screen and (max-width: 285px) {
+	.card {
+		max-width: 16em;
+		&__title {
+			.title {
+				font-size: 16px;
+			}
+		}
+	}
+}

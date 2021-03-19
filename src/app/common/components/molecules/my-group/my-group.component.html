@@ -1,0 +1,31 @@
+<div class="container">
+	<mat-card>
+		<mat-card-header>
+			<div class="header">
+				<span class="header__migrupo"> Mi grupo </span>
+				<span class="header__iralgrupo url">Ir al grupo</span>
+			</div>
+
+			<div class="rectangle">
+				<span class="rectangle__text"> Team Angular </span>
+				<img
+					class="rectangle__image"
+					src="../../../../../assets/svg/framework-logos/angular-logo.svg"
+				/>
+			</div>
+		</mat-card-header>
+
+		<mat-card-content>
+			<div>
+				<app-member *ngFor="let item of memberItems" [itemMember]="item"></app-member>
+			</div>
+		</mat-card-content>
+
+		<mat-card-footer>
+			<mat-card-actions class="footer">
+				<button class="footer__buttonabandonar" mat-stroked-button color="warn">Abandonar</button>
+				<button class="footer__buttoniralchat" mat-flat-button color="primary">Ir al Chat</button>
+			</mat-card-actions>
+		</mat-card-footer>
+	</mat-card>
+</div>

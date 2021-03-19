@@ -1,0 +1,10 @@
+<div class="container">
+	<div
+		*ngFor="let menu of listSubMenu"
+		(click)="onClickMenu(menu)"
+		[ngClass]="{ selected: menu.select, 'no-select': true }"
+	>
+		<img [src]="menu.pathImage" />
+		<span class="name-submenu">{{ menu.name }}</span>
+	</div>
+</div>

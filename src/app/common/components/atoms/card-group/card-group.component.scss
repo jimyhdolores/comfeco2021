@@ -1,0 +1,87 @@
+@import '../../../../../assets/scss/variables.scss';
+::ng-deep .mat-card .mat-focus-indicator .card {
+  margin: 0;
+}
+
+.mat-card {
+  padding: 0;
+  margin: 0;
+}
+
+.mat-card-image:first-child{
+  margin-top: 0;
+}
+
+.card {
+  display: flex;
+	flex-direction: column;
+  width: 240px;
+  height: 401px;
+  box-shadow: 0px 4px 17px 5px #B6B7B7;
+  border-radius: 19px;
+  margin: 0;
+  &__image{
+    width: 100%;
+    height: 167px;
+    background: url('/assets/images/groups/group.jpg')  bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 18px 19px 0px 0px;
+  }
+
+  &__shared{
+    width: 42px;
+    height: 35px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #E4E4E4;
+    border-radius: 0px 19px 0px 10px;
+  }
+
+  &__technology{
+    border-radius: 0 7px 7px 0;
+    width: 45%;
+    display: inline-block;
+    background-color: #0b2739;
+    left: 0;
+    padding: .2em 0;
+    padding-right: .6em;
+    text-align: center;
+    color: white;
+    margin-top: .5em;
+  }
+
+  &__content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1em;
+    border-radius: 0px 0px 19px 19px;
+
+    &-title{
+      font-size: 1.5em;
+      text-align: left;
+      width: 100%;
+      margin-left: 1em;
+      font-weight: bold;
+    }
+
+    &-description{
+      margin: 1em;
+      text-align: justify;
+    }
+
+    &-join{
+      display: block;
+      margin-bottom: 1em !important;
+      width: 108px;
+    }
+  }
+
+}

@@ -1,0 +1,73 @@
+@import '../../../../../assets/scss/variables.scss';
+
+.container {
+	display: flex;
+	flex-direction: column;
+	.member {
+		display: flex;
+		align-items: center;
+		justify-content: space-evenly;
+		&__item {
+			display: flex;
+			align-items: center;
+			gap: 1em;
+			.image {
+				border-radius: 50%;
+				width: 50.86px;
+				height: 50.86px;
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+			.align {
+				display: flex;
+				flex-direction: column;
+
+				@media screen and (min-height: 1000px) {
+					line-height: 8px;
+				}
+				&__name {
+					font-size: 1.5em;
+					font-weight: 500;
+					color: $color-blue-metalic;
+				}
+				&__experience {
+					font-weight: 500;
+					color: $color-text;
+				}
+			}
+		}
+		&__type {
+			font-weight: 500;
+			color: $color-blue-metalic;
+		}
+	}
+	hr {
+		border: 1px solid #ff6e40;
+		width: 100%;
+	}
+}
+
+@media only screen and (max-width: 930px) {
+	.container {
+		.member {
+			&__item {
+				.image {
+					border-radius: 50%;
+					width: 50.86px;
+					height: 50.86px;
+				}
+				.align {
+					&__name {
+						font-size: 1em;
+					}
+					&__experience {
+						font-size: 12px;
+					}
+				}
+			}
+			&__type {
+				font-size: 12px;
+			}
+		}
+	}
+}
