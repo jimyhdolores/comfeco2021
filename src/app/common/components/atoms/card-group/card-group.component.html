@@ -1,6 +1,6 @@
 <mat-card class="card">
 	<div class="card__image"></div>
-	<div class="card__shared">
+	<div class="card__shared no-select">
 		<span class="material-icons"> share </span>
 	</div>
 	<p class="card__technology">{{ group.nameTechnology }}</p>
@@ -9,6 +9,8 @@
 		<p class="card__content-description">
 			{{ group.description }}
 		</p>
-		<button mat-raised-button color="primary" class="card__content-join">Unirse</button>
+		<button mat-raised-button color="primary" class="card__content-join" (click)="clickJoin()">
+			Unirse
+		</button>
 	</mat-card-content>
 </mat-card>

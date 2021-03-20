@@ -1,4 +1,8 @@
-<div class="container">
+<div
+	class="container"
+	*ngIf="(splashScreenService.suscription() | async) === false"
+	[@inOutAnimation]
+>
 	<div class="header">
 		<app-header></app-header>
 	</div>
@@ -12,3 +16,4 @@
 		<app-footer></app-footer>
 	</div>
 </div>
+<app-splash-screen [@inOutAnimation]></app-splash-screen>

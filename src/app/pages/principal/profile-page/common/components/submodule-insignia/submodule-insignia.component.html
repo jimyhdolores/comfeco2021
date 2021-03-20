@@ -1,3 +1,21 @@
-<div class="container">
+<div class="container" *ngIf="listInsignia.length > 0">
 	<app-insignia *ngFor="let item of listInsignia" [item]="item"></app-insignia>
+</div>
+
+<div class="container" *ngIf="listInsignia.length == 0">
+	<mat-card class="card-skeleton" *ngFor="let item of listSkeleton">
+		<div>
+			<ngx-skeleton-loader appearance="circle" [theme]="{ width: '10em', height: '10em' }">
+			</ngx-skeleton-loader>
+		</div>
+
+		<div class="name">
+			<ngx-skeleton-loader count="1" [theme]="{ height: '40px' }"></ngx-skeleton-loader>
+		</div>
+
+		<div class="how">
+			<ngx-skeleton-loader count="1" [theme]="{ height: '40px' }"></ngx-skeleton-loader>
+			<ngx-skeleton-loader count="3" [theme]="{ height: '40px' }"></ngx-skeleton-loader>
+		</div>
+	</mat-card>
 </div>

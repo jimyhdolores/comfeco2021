@@ -5,9 +5,12 @@
 .card {
 	display: flex;
 	flex-direction: column;
-	width: 800px;
 	box-shadow: 0px 4px 17px 5px #b6b7b7;
 	border-radius: 19px;
+
+	@media screen and (min-width: 800px) {
+		width: 44em;
+	}
 
 	&__header {
 		display: flex;
@@ -17,7 +20,7 @@
 		align-items: center;
 		gap: 0.5em;
 
-		&-back{
+		&-back {
 			color: $color-secondary;
 			position: absolute;
 			top: 10%;
@@ -50,14 +53,18 @@
 
 		&-uno {
 			display: grid;
-			justify-content: space-between;
-			grid-template-columns: 48% 48%;
+			@media screen and (min-width: 700px) {
+				justify-content: space-between;
+				grid-template-columns: 48% 48%;
+			}
 		}
 
 		&-dos {
 			display: grid;
-			grid-template-columns: 32% 32% 32%;
-			justify-content: space-between;
+			@media screen and (min-width: 700px) {
+				grid-template-columns: 32% 32% 32%;
+				justify-content: space-between;
+			}
 		}
 
 		&-tres {
@@ -84,8 +91,10 @@
 
 		&-social {
 			display: grid;
-			grid-template-columns: 48% 48%;
-			justify-content: space-between;
+			@media screen and (min-width: 700px) {
+				grid-template-columns: 48% 48%;
+				justify-content: space-between;
+			}
 		}
 
 		&-biography {

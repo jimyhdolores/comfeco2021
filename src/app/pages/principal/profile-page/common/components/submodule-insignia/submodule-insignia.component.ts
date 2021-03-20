@@ -13,7 +13,7 @@ export class SubmoduleInsigniaComponent implements OnInit, OnDestroy {
 
 	subscriptionInsignia!: Subscription;
 	listInsignia: IInsignia[] = [];
-
+	listSkeleton = [1, 2, 3, 4];
 	ngOnInit(): void {
 		this.subscriptionInsignia = this.profileService.getInsignias().subscribe(
 			(data) => {

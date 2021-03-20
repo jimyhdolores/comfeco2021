@@ -1,21 +1,21 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { IErroFirebase } from '@team31/models/interfaces/register.interface';
 import { AuthService } from '@team31/services/auth.service';
 import { HeaderService } from '@team31/services/header.service';
 import { MessageService } from '@team31/services/message.service';
 import { ProfileService } from '@team31/services/profile.service';
+import { SplashScreenService } from '@team31/services/splash-screen.service';
 import { UserdataService } from '@team31/services/userdata.service';
-import { Subscription } from 'rxjs';
 @Component({
 	selector: 'app-login-page',
 	templateUrl: './login-page.component.html',
 	styleUrls: ['./login-page.component.scss']
 })
-export class LoginPageComponent implements OnDestroy {
+export class LoginPageComponent implements OnInit {
 	email = 'kevin@comfeco.com';
 	password = '123456';
 	hidePassword = true;
-	dataSubscription: Subscription | undefined;
 	isLoading = false;
 	constructor(
 		private authFirebaseService: AuthService,
@@ -23,16 +23,17 @@ export class LoginPageComponent implements OnDestroy {
 		private router: Router,
 		private userDataService: UserdataService,
 		private headerService: HeaderService,
-		private profileService: ProfileService
+		private profileService: ProfileService,
+		private splashScreenService: SplashScreenService
 	) {}
-
-	ngOnDestroy(): void {
-		this.dataSubscription?.unsubscribe();
+	ngOnInit(): void {
+		this.authFirebaseService.logout();
 	}
 
 	async login(): Promise<void> {
 		try {
 			this.isLoading = true;
+			this.splashScreenService.showSplashScreen(true);
 			const singIn = await this.authFirebaseService.singInWithEmailAndPassword(
 				this.email,
 				this.password
@@ -45,14 +46,26 @@ export class LoginPageComponent implements OnDestroy {
 					userDataService.profile.email = this.email;
 
 					this.userDataService.setUserProfileData = userDataService;
-
-					void this.router.navigateByUrl('/principal');
-					this.headerService.showMenu(true);
+					const showPrincipal = await this.router.navigateByUrl('/principal');
+					if (showPrincipal) {
+						this.headerService.showMenu(true);
+						this.splashScreenService.showSplashScreen(false);
+					}
 				}
+			} else {
+				this._messageService.openError('Aun no te has registrado, crea una cuenta.', 'end', 'top');
 			}
 		} catch (error) {
+			const erroFirebase = error as IErroFirebase;
+			let messageError = 'Ups!, ocurrio un erro, intenta nuevamente.';
+
+			if (erroFirebase && erroFirebase.code === 'auth/invalid-email') {
+				messageError = 'Ups! parece que aún no te registras, crea tu cuenta YA!';
+			}
+			this._messageService.openError(messageError, 'end', 'top');
+
 			this.isLoading = false;
-			this._messageService.openError(error, 'end', 'top');
+			this.splashScreenService.showSplashScreen(false);
 			console.error('Error cl:', error);
 		}
 	}

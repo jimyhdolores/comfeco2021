@@ -1,7 +1,7 @@
 <div class="container">
-	<mat-icon matBadge="17" matBadgeColor="warn">notifications_active</mat-icon>
-	<div class="container__profile">
-		<label [matMenuTriggerFor]="profile">{{ nameUser }}</label>
+	<mat-icon matBadge="17" matBadgeColor="warn" class="no-select">notifications_active</mat-icon>
+	<div class="container__profile" [matMenuTriggerFor]="profile">
+		<label>{{ nameUser }}</label>
 		<img src="assets/images/person.png" class="navbar-brand__item-logo" alt="Team Angular 31" />
 	</div>
 </div>

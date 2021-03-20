@@ -32,8 +32,6 @@ export class UserProfileComponent implements OnInit {
 
 	clickCloseSession(): void {
 		this.auth.logout();
-		sessionStorage.clear();
-		this.headerService.showMenu(false);
 		void this.route.navigateByUrl(PathProject.LOGIN);
 	}
 }

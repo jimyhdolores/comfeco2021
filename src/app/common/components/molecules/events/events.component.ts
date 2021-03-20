@@ -45,7 +45,7 @@ export class EventsComponent {
 			this.authService.updateActivitiesData(dataUser.profile.uid, dataUser.activities);
 
 			this.userdataService.setUserProfileData = dataUser;
-			this.messageService.openInfo('Gracias por participa.', 'end', 'top');
+			this.messageService.openInfo('Gracias por participar.', 'end', 'top');
 		} catch (error) {
 			this.item.disabled = false;
 			this.messageService.openError('Ups, ocurrio un error intenta nuevamente.', 'end', 'top');

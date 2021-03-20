@@ -16,7 +16,15 @@ $team-angular31-comfeco-accent: mat-palette($mat-orange, A200, A100, A400);
 $team-angular31-comfeco-warn: mat-palette($mat-pink);
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$team-angular31-comfeco-theme: mat-light-theme( ( color: ( primary: $team-angular31-comfeco-primary, accent: $team-angular31-comfeco-accent, warn: $team-angular31-comfeco-warn)));
+$team-angular31-comfeco-theme: mat-light-theme(
+	(
+		color: (
+			primary: $team-angular31-comfeco-primary,
+			accent: $team-angular31-comfeco-accent,
+			warn: $team-angular31-comfeco-warn
+		)
+	)
+);
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
@@ -26,96 +34,100 @@ $team-angular31-comfeco-theme: mat-light-theme( ( color: ( primary: $team-angula
 
 html,
 body {
-    *,
-    *:focus,
-    *:hover {
-        outline: none;
-    }
-    // height: 100vh;
-    padding: 0;
-    margin: 0;
+	*,
+	*:focus,
+	*:hover {
+		outline: none;
+	}
+	padding: 0;
+	margin: 0;
+	height: 100%;
+	width: 100%;
 }
 
 body {
-    font-family: Roboto, 'Helvetica Neue', sans-serif;
-    color: $color-text;
-    font-size: 12px;
-    input[type='text'] {
-        color: $color-text;
-    }
-    .card {
-        box-shadow: 0px 4px 17px 5px #b6b7b7 !important;
-        border-radius: 20px;
-    }
-    .cdk-overlay-dark-backdrop {
-        background: rgba(0, 0, 0, 0);
-    }
-    .blur {
-        filter: blur(2px);
-    }
-    .url {
-        color: #019df4;
-        text-decoration: underline;
-        cursor: pointer;
-    }
-    .modal-terms {
-        .mat-dialog-container {
-            border-radius: 40px;
-            background-color: #ffefe7;
-            color: $color-text-alternative;
-            min-height: 70%;
-            height: 450px;
-            h2 {
-                font-size: 13px;
-                font-weight: bold;
-            }
-            p {
-                font-size: 11px;
-            }
-            button {
-                font-size: 12px;
-            }
-        }
-    }
-    .inputs {
-        .mat-form-field-infix {
-            width: 340px;
-        }
-    }
-    .terms {
-        .mat-checkbox-layout {
-            white-space: pre;
-            font-size: 9px;
-            margin-top: 2em;
-        }
-    }
-    .mat-snack-bar-container {
-        color: white;
-        text-align: center;
-    }
-    .mat-simple-snackbar {
-        justify-content: center;
-        font-size: 1em;
-    }
-    .snackbar-error {
-        background-color: $color-error;
-    }
-    .snackbar-info {
-        background-color: $color-secondary;
-    }
+	font-family: Roboto, 'Helvetica Neue', sans-serif;
+	color: $color-text;
+	font-size: 12px;
+	input[type='text'] {
+		color: $color-text;
+	}
+	.card {
+		box-shadow: 0px 4px 17px 5px #b6b7b7 !important;
+		border-radius: 20px;
+	}
+	.cdk-overlay-dark-backdrop {
+		background: rgba(0, 0, 0, 0);
+	}
+	.blur {
+		filter: blur(2px);
+	}
+	.url {
+		color: #019df4;
+		text-decoration: underline;
+		cursor: pointer;
+	}
+	.modal-terms {
+		.mat-dialog-container {
+			border-radius: 40px;
+			background-color: #ffefe7;
+			color: $color-text-alternative;
+			min-height: 70%;
+			height: 450px;
+			h2 {
+				font-size: 13px;
+				font-weight: bold;
+			}
+			p {
+				font-size: 11px;
+			}
+			button {
+				font-size: 12px;
+			}
+		}
+	}
+	.inputs {
+		.mat-form-field-infix {
+			width: 340px;
+		}
+	}
+	.terms {
+		.mat-checkbox-layout {
+			white-space: pre;
+			font-size: 9px;
+			margin-top: 2em;
+		}
+	}
+	.mat-snack-bar-container {
+		color: white;
+		text-align: center;
+	}
+	.mat-simple-snackbar {
+		justify-content: center;
+		font-size: 1em;
+	}
+	.snackbar-error {
+		background-color: $color-error;
+	}
+	.snackbar-info {
+		background-color: $color-secondary;
+	}
+	.mat-form-field-infix {
+		width: auto;
+	}
 }
 
 .no-select {
-    -webkit-touch-callout: none;
-    /* iOS Safari */
-    -webkit-user-select: none;
-    /* Safari */
-    -khtml-user-select: none;
-    /* Konqueror HTML */
-    -moz-user-select: none;
-    /* Old versions of Firefox */
-    -ms-user-select: none;
-    /* Internet Explorer/Edge */
-    user-select: none;
-    /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+	-webkit-touch-callout: none;
+	/* iOS Safari */
+	-webkit-user-select: none;
+	/* Safari */
+	-khtml-user-select: none;
+	/* Konqueror HTML */
+	-moz-user-select: none;
+	/* Old versions of Firefox */
+	-ms-user-select: none;
+	/* Internet Explorer/Edge */
+	user-select: none;
+	/* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
 }

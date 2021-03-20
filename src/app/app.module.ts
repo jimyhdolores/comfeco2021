@@ -11,10 +11,10 @@ import { HeaderBannerModule } from '@team31/components-atoms/header-banner.modul
 import { HeaderService } from '@team31/services/header.service';
 import { MessageService } from '@team31/services/message.service';
 import { ModalService } from '@team31/services/modal.service';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
 @NgModule({
 	declarations: [AppComponent],
 	imports: [
@@ -26,7 +26,8 @@ import { AppComponent } from './app.component';
 		HeaderBannerModule,
 		MatDialogModule,
 		MatSnackBarModule,
-		LayoutModule
+		LayoutModule,
+		NgxSkeletonLoaderModule
 	],
 	providers: [HeaderService, ModalService, MessageService],
 	bootstrap: [AppComponent]

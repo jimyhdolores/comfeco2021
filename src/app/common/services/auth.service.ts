@@ -1,11 +1,11 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-import { AngularFirestore } from '@angular/fire/firestore';
+import { HeaderService } from '@team31/services/header.service';
 import firebase from 'firebase/app';
 
 @Injectable()
 export class AuthService {
-	constructor(private _authService: AngularFireAuth, private _fireStore: AngularFirestore) {}
+	constructor(private _authService: AngularFireAuth, private headerService: HeaderService) {}
 
 	singInWithEmailAndPassword(
 		email: string,
@@ -31,6 +31,8 @@ export class AuthService {
 	}
 
 	logout(): void {
+		sessionStorage.clear();
+		this.headerService.showMenu(false);
 		void this._authService.signOut();
 	}
 

@@ -10,7 +10,7 @@ import { UserdataService } from '@team31/services/userdata.service';
 })
 export class SubmoduleEventsComponent implements OnInit {
 	constructor(private profileService: ProfileService, private userdataService: UserdataService) {}
-
+	listSkeleton = [1, 2, 3];
 	listEvents: IEvent[] = [];
 	ngOnInit(): void {
 		this.profileService.getEvents().subscribe((events) => {

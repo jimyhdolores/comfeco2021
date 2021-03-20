@@ -18,3 +18,18 @@
 		color: $color-text-alternative;
 	}
 }
+
+@media only screen and (max-width: 550px) {
+	.container {
+		&__terms-conditions {
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+			font-weight: 500;
+
+			.url {
+				color: #0049ff;
+			}
+		}
+	}
+}

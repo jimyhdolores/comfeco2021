@@ -1,3 +1,4 @@
+import { TypeErrorFirebase } from './../types';
 export interface IRegister {
 	inputs?: IInputs[];
 	button?: string;
@@ -15,4 +16,8 @@ export interface IInputs {
 export interface IOptionSelect {
 	id: number;
 	value: string;
+}
+export interface IErroFirebase {
+	code: TypeErrorFirebase;
+	message: string;
 }

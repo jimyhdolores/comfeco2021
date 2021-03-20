@@ -10,10 +10,18 @@
 			{{ profile.biography }}
 		</p>
 		<div *ngIf="profile.redSocial" class="red-social">
-			<img src="assets/svg/facebook.svg" alt="Ir a facebook" />
-			<img src="assets/svg/twitter.svg" alt="Ir a twitter" />
-			<img src="assets/svg/linkedin.svg" alt="Ir a Linkedin" />
-			<img src="assets/svg/git_hub.svg" alt="Ir a gitHub" />
+			<a href="http://www.facebook.com/{{ profile.redSocial.facebook }}" target="_blank">
+				<img src="assets/svg/facebook.svg" alt="Ir a facebook" />
+			</a>
+			<a href="http://www.twitter.com/{{ profile.redSocial.twitter }}" target="_blank">
+				<img src="assets/svg/twitter.svg" alt="Ir a twitter" />
+			</a>
+			<a href="http://www.linkedin.com/in/{{ profile.redSocial.linkedin }}">
+				<img src="assets/svg/linkedin.svg" alt="Ir a Linkedin" />
+			</a>
+			<a href="http://www.github.com/{{ profile.redSocial.github }}">
+				<img src="assets/svg/git_hub.svg" alt="Ir a gitHub" />
+			</a>
 		</div>
 		<span *ngIf="!profile.redSocial"> Actualiza tus Redes Sociales </span>
 		<label class="url" *ngIf="showMessageInsignia()">Completa tu Perfil y gana una insignia!</label>

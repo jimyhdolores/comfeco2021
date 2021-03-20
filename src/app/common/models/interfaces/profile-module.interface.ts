@@ -27,6 +27,17 @@ export interface IGroups {
 	members: Array<IMember>;
 }
 
+export interface IGroupUser {
+	name: string;
+	urlLogo: string;
+	members: IGroupUserMember[];
+}
+
+export interface IGroupUserMember {
+	name: string;
+	level: string;
+}
+
 export interface IMember {
 	name: string;
 	level: string;

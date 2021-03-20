@@ -4,6 +4,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
 import {
 	IEventRequest,
 	IGroups,
+	IGroupUser,
 	IInsignia
 } from '@team31/models/interfaces/profile-module.interface';
 import {
@@ -20,6 +21,11 @@ import { TypeAttributeDataUser } from './../models/types';
 })
 export class ProfileService {
 	constructor(private _fireStore: AngularFirestore, private _authService: AngularFireAuth) {}
+
+	async loadProfileData(uid: string): Promise<IUserProfile> {
+		const userDocument = await this._fireStore.collection('users').doc(uid).get().toPromise();
+		return <IUserProfile>userDocument.data();
+	}
 
 	getEvents(): Observable<IEventRequest[]> {
 		return this._fireStore.collection<IEventRequest>('events').valueChanges();
@@ -39,17 +45,16 @@ export class ProfileService {
 			.valueChanges();
 	}
 
-	async loadProfileData(uid: string): Promise<IUserProfile> {
-		const userDocument = await this._fireStore.collection('users').doc(uid).get().toPromise();
-		return <IUserProfile>userDocument.data();
-	}
-
 	updateProfileData(uid: string, data: IUser): void {
 		this.updateDataUser(uid, 'profile', data);
 	}
 
 	updateEventsData(uid: string, data: IEventUser[]): void {
 		this.updateDataUser(uid, 'events', data);
+	}
+
+	updateGroupsData(uid: string, data: IGroupUser): void {
+		this.updateDataUser(uid, 'group', data);
 	}
 
 	updateActivitiesData(uid: string, data: string[]): void {

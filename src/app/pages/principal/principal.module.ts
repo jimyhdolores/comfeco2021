@@ -1,10 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { AtomModule } from '@team31/components-atoms/atoms.module';
 import { MoleculesModule } from '@team31/components-molecules/molecules.module';
 import { AuthService } from '@team31/services/auth.service';
 import { MessageService } from '@team31/services/message.service';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 import { CustomValidatorsService } from '../authentication/common/service/custom-validators.service';
 import { HomePageComponent } from './home-page/home-page.component';
 import { PrincipalRoutingModule } from './principal-routing.module';
@@ -14,8 +16,6 @@ import { SubmoduleGroupsComponent } from './profile-page/common/components/submo
 import { SubmoduleInsigniaComponent } from './profile-page/common/components/submodule-insignia/submodule-insignia.component';
 import { SubmoduleProfileComponent } from './profile-page/common/components/submodule-profile/submodule-profile.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
-import { MatExpansionModule } from '@angular/material/expansion';
-
 @NgModule({
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 	declarations: [
@@ -34,7 +34,8 @@ import { MatExpansionModule } from '@angular/material/expansion';
 		CommonModule,
 		FormsModule,
 		ReactiveFormsModule,
-		MatExpansionModule
+		MatExpansionModule,
+		NgxSkeletonLoaderModule.forRoot()
 	],
 	exports: [],
 	providers: [AuthService, CustomValidatorsService, MessageService]

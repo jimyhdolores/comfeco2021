@@ -4,4 +4,23 @@
 	align-items: center;
 	flex-wrap: wrap;
 	gap: 1em;
+	width: 100%;
+
+	.insignia {
+		width: 100%;
+	}
+
+	.card-skeleton {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 20em;
+		height: 35em;
+		gap: 1em;
+
+		.name,
+		.how {
+			width: 100%;
+		}
+	}
 }
