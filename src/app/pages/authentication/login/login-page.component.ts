@@ -35,7 +35,7 @@ export class LoginPageComponent implements OnInit {
 			this.isLoading = true;
 			this.splashScreenService.showSplashScreen(true);
 			const singIn = await this.authFirebaseService.singInWithEmailAndPassword(
-				this.email,
+				this.email.toLowerCase(),
 				this.password
 			);
 
