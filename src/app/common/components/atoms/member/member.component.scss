@@ -8,13 +8,16 @@
 		align-items: center;
 		justify-content: space-evenly;
 		&__item {
-			display: flex;
+			width: 100%;
+			display: grid;
+			grid-template-columns: 25% 50% 20%;
 			align-items: center;
-			gap: 1em;
+			grid-gap: 1em;
+			justify-content: space-evenly;
 			.image {
 				border-radius: 50%;
-				width: 50.86px;
-				height: 50.86px;
+				width: 45px;
+				height: 45px;
 				background-size: cover;
 				background-repeat: no-repeat;
 			}

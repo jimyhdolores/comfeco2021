@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IMember } from '../../../models/interfaces/member.interface';
+import { IGroupUserMember } from '@team31/models/interfaces/profile-module.interface';
 
 @Component({
 	selector: 'app-member',
@@ -7,5 +7,5 @@ import { IMember } from '../../../models/interfaces/member.interface';
 	styleUrls: ['./member.component.scss']
 })
 export class MemberComponent {
-	@Input() itemMember: IMember = <IMember>{};
+	@Input() itemMember: IGroupUserMember = <IGroupUserMember>{};
 }

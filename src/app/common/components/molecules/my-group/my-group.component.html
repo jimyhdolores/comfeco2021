@@ -7,7 +7,9 @@
 			</div>
 
 			<div class="rectangle">
-				<span class="rectangle__text"> Team Angular </span>
+				<span class="rectangle__text">
+					{{ userGroupData.name }}
+				</span>
 				<img
 					class="rectangle__image"
 					src="../../../../../assets/svg/framework-logos/angular-logo.svg"
@@ -17,7 +19,7 @@
 
 		<mat-card-content>
 			<div>
-				<app-member *ngFor="let item of memberItems" [itemMember]="item"></app-member>
+				<app-member *ngFor="let item of userGroupData.members" [itemMember]="item"></app-member>
 			</div>
 		</mat-card-content>
 

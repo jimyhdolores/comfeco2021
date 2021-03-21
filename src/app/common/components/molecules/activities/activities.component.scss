@@ -1,15 +1,43 @@
-.empty {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
+@import '../../../../../assets/scss/variables.scss';
 
-	img {
-		width: 4em;
+.card{
+	max-height: 620px;
+	overflow-y: scroll;
+	scrollbar-color: $color-primary $color-secondary;
+	.empty {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	
+		img {
+			width: 4em;
+		}
 	}
+	
+	.container-items {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	
+}
+/* width */
+::-webkit-scrollbar {
+	width: 1em;
 }
 
-.container-items {
-	display: flex;
-	flex-direction: column;
-	gap: 10px;
+/* Track */
+::-webkit-scrollbar-track {
+  background: $color-secondary-ligth;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: $color-primary;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: $color-secondary;
 }

@@ -1,13 +1,13 @@
 <div class="container">
 	<div class="member">
 		<div class="member__item">
-			<div [ngStyle]="{ 'background-image': 'url(' + itemMember.photo + ')' }" class="image"></div>
+			<div [ngStyle]="{ 'background-image': 'url(assets/images/user.svg)' }" class="image"></div>
 			<div class="align">
 				<label class="align__name"> {{ itemMember.name }} </label>
-				<label class="align__experience"> {{ itemMember.experience }} </label>
+				<label class="align__experience"> {{ itemMember.level }} </label>
 			</div>
 		</div>
-		<label class="member__type"> {{ itemMember.type }} </label>
+		<label class="member__type"> Integrante </label>
 	</div>
 	<hr />
 </div>

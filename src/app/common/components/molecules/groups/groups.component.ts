@@ -1,24 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { LANGUAGES } from '@team31/models/constants/team-leader.const';
 import { IGroups } from '@team31/models/interfaces/profile-module.interface';
 import { ProfileService } from '@team31/services/profile.service';
+import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'app-groups',
 	templateUrl: './groups.component.html',
 	styleUrls: ['./groups.component.scss']
 })
-export class GroupsComponent implements OnInit {
+export class GroupsComponent implements OnInit, OnDestroy {
 	languagesList = LANGUAGES;
 	languageFilter = '';
 	textFilter = '';
 	groupsData: IGroups[] = [];
 	groupsDataBackup: IGroups[] = [];
+	subscriptionGroups!: Subscription;
 
 	constructor(private profileService: ProfileService) {}
 
 	ngOnInit(): void {
-		this.profileService.getGroups().subscribe((groups: IGroups[]) => {
+		this.subscriptionGroups = this.profileService.getGroups().subscribe((groups: IGroups[]) => {
 			this.groupsData = groups;
 			this.groupsDataBackup = groups;
 		});
@@ -42,5 +44,9 @@ export class GroupsComponent implements OnInit {
 				);
 			}
 		}
+	}
+
+	ngOnDestroy(): void {
+		this.subscriptionGroups.unsubscribe();
 	}
 }

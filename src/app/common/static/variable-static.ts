@@ -2,7 +2,7 @@ import { IDataDialog } from '../models/interfaces/data-dialog.interface';
 export class VariableStatic {
 	static readonly REGISTRATION_TERMS_CONDITIONS: IDataDialog = {
 		titleModal: 'Terminos y condiciones',
-		contentModal: `Al acceder a este sitio web, asumimos que aceptas estos términos y condiciones en su totalidad. No continúes usando el sitio web (Nombre de la tienda) si no aceptas todos los términos y condiciones establecidos en esta página.
+		contentModal: `Al acceder a este sitio web, asumimos que aceptas estos términos y condiciones en su totalidad. No continúes usando el sitio web COMFECO si no aceptas todos los términos y condiciones establecidos en esta página.
 
         La siguiente terminología se aplica a estos Términos y Condiciones, Declaración de Privacidad y Aviso legal y cualquiera o todos los Acuerdos: el Cliente, Usted y Su se refieren a usted, la persona que accede a este sitio web y acepta los términos y condiciones de la Compañía. La Compañía, Nosotros mismos, Nosotros y Nuestro, se refiere a nuestra Compañía. Parte, Partes o Nosotros, se refiere en conjunto al Cliente y a nosotros mismos, o al Cliente o a nosotros mismos.
 

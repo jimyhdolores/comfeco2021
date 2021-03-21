@@ -1,6 +1,7 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ChannelProfileService } from '@team31/services/channel-submenus.service';
+import { Subscription } from 'rxjs';
 
 @Component({
 	selector: 'app-profile-page',
@@ -16,15 +17,19 @@ import { ChannelProfileService } from '@team31/services/channel-submenus.service
 		])
 	]
 })
-export class ProfilePageComponent implements OnInit {
+export class ProfilePageComponent implements OnInit, OnDestroy {
 	panelOpenState = false;
+	subscription!: Subscription;
 	constructor(private channelProfileService: ChannelProfileService) {}
 	titleSubMenu = 'Mi Perfil';
 	nameComponeny = 'Mi Perfil';
 	ngOnInit(): void {
-		this.channelProfileService.channel$.subscribe((data) => {
+		this.subscription = this.channelProfileService.channel$.subscribe((data) => {
 			this.nameComponeny = data;
 			this.titleSubMenu = data;
 		});
+	}
+	ngOnDestroy(): void {
+		this.subscription.unsubscribe();
 	}
 }

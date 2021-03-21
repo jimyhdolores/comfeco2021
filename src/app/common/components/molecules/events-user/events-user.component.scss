@@ -2,10 +2,11 @@
 
 .container {
 	padding: 1em;
-	// width: 300px;
 	background: #ffffff;
 	border-radius: 19px;
-
+	max-height: 620px;
+	overflow-y: scroll;
+	scrollbar-color: $color-primary $color-secondary;
 	&__titles {
 		display: flex;
 		justify-content: space-between;

@@ -31,7 +31,6 @@ export class CarouselComponent implements AfterViewInit, OnInit {
 		touch: true,
 		velocity: 0.2,
 		load: 4
-		// animation: 'lazy'
 	};
 	constructor(private cdr: ChangeDetectorRef) {}
 
