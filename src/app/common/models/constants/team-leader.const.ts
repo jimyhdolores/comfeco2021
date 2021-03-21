@@ -192,7 +192,7 @@ export const COUNTRY_ITEMS: IOptionSelect[] = [
 ];
 
 export const AREA_ITEMS: IOptionSelect[] = [
-	{ id: 0, value: 'Seleccione area' },
+	{ id: 0, value: 'Seleccione área' },
 	{ id: 1, value: 'FronEnd' },
 	{ id: 2, value: 'BackEnd' },
 	{ id: 3, value: 'DevOps' },
