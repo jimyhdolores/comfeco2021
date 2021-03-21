@@ -13,8 +13,8 @@ import { UserdataService } from '@team31/services/userdata.service';
 	styleUrls: ['./login-page.component.scss']
 })
 export class LoginPageComponent implements OnInit {
-	email = 'kevin@comfeco.com';
-	password = '123456';
+	email = '';
+	password = '';
 	hidePassword = true;
 	isLoading = false;
 	constructor(
