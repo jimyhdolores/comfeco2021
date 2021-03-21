@@ -175,7 +175,7 @@ export class UserEditComponent implements OnInit, OnDestroy {
 
 	createProfileForm(): FormGroup {
 		return this.fb.group({
-			nick: ['', [Validators.required, Validators.minLength(4)]],
+			nick: ['', [Validators.required, Validators.minLength(5)]],
 			idGender: [0],
 			email: [{ value: '', disabled: true }],
 			dateB: [''],
