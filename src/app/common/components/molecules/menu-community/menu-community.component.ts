@@ -11,9 +11,7 @@ export class MenuCommunityComponent {
 	listCommunity: Sponsor[] = [
 		{ photo: 'assets/images/sponsors/CodelyTV.jpg', name: 'Codely Tv' },
 		{ photo: 'assets/images/sponsors/codigofacilito.jpg', name: 'Codigo facilito' },
-		{ photo: 'assets/images/sponsors/DominiCode.jpg', name: 'Domini Code' },
-		{ photo: 'assets/images/sponsors/Egghead.jpg', name: 'Egghead' },
-		{ photo: 'assets/images/sponsors/Egghead.jpg', name: 'Egghead' }
+		{ photo: 'assets/images/sponsors/DominiCode.jpg', name: 'Domini Code' }
 	];
 
 	showMenuComunnity(): void {

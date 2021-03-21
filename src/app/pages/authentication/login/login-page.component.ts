@@ -38,6 +38,7 @@ export class LoginPageComponent implements OnInit {
 				this.email,
 				this.password
 			);
+
 			if (singIn && singIn.user) {
 				const userDataService = await this.profileService.loadProfileData(singIn.user.uid);
 
@@ -51,13 +52,20 @@ export class LoginPageComponent implements OnInit {
 						this.headerService.showMenu(true);
 						this.splashScreenService.showSplashScreen(false);
 					}
+				} else {
+					this._messageService.openError(
+						'Ups!, ocurrio un error, intenta nuevamente.',
+						'end',
+						'top'
+					);
+					this.splashScreenService.showSplashScreen(false);
 				}
 			} else {
 				this._messageService.openError('Aun no te has registrado, crea una cuenta.', 'end', 'top');
 			}
 		} catch (error) {
 			const erroFirebase = error as IErroFirebase;
-			let messageError = 'Ups!, ocurrio un erro, intenta nuevamente.';
+			let messageError = 'Ups!, ocurrio un error, intenta nuevamente.';
 
 			if (erroFirebase && erroFirebase.code === 'auth/invalid-email') {
 				messageError = 'Ups! parece que aún no te registras, crea tu cuenta YA!';

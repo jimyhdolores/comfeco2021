@@ -28,8 +28,6 @@ export class AppComponent implements OnDestroy {
 			.pipe(filter((event) => event instanceof NavigationEnd))
 			.subscribe((event) => {
 				const navigation = event as NavigationEnd;
-				console.log(navigation);
-
 				this.addHeigth = navigation.url.indexOf(PathProject.LOGIN) > -1;
 			});
 	}

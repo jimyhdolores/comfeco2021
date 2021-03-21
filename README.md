@@ -8,6 +8,11 @@ https://comfeco-2021-team-angular-31.vercel.app/login
 
 Primero tienen que registrarse para que puedan ingresar a la web, no lo olviden;
 
+## ID del QUICK APP
+
+App ID:
+104037031
+
 ## Integrantes del Equipo
 
 @jimyhdolores
