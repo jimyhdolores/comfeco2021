@@ -16,6 +16,8 @@ import { SubmoduleGroupsComponent } from './profile-page/common/components/submo
 import { SubmoduleInsigniaComponent } from './profile-page/common/components/submodule-insignia/submodule-insignia.component';
 import { SubmoduleProfileComponent } from './profile-page/common/components/submodule-profile/submodule-profile.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
+import { CreatorsPageComponent } from './creators-page/creators-page.component';
+import { CommunitysPageComponent } from './communitys-page/communitys-page.component';
 @NgModule({
 	schemas: [CUSTOM_ELEMENTS_SCHEMA],
 	declarations: [
@@ -25,7 +27,9 @@ import { ProfilePageComponent } from './profile-page/profile-page.component';
 		SubmoduleProfileComponent,
 		SubMenuComponent,
 		SubmoduleGroupsComponent,
-		SubmoduleInsigniaComponent
+		SubmoduleInsigniaComponent,
+		CreatorsPageComponent,
+		CommunitysPageComponent
 	],
 	imports: [
 		PrincipalRoutingModule,

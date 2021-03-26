@@ -9,9 +9,17 @@ import { Sponsor } from './../../../models/carousel';
 export class MenuCommunityComponent {
 	showMenu = false;
 	listCommunity: Sponsor[] = [
-		{ photo: 'assets/images/sponsors/CodelyTV.jpg', name: 'Codely Tv' },
-		{ photo: 'assets/images/sponsors/codigofacilito.jpg', name: 'Codigo facilito' },
-		{ photo: 'assets/images/sponsors/DominiCode.jpg', name: 'Domini Code' }
+		{ photo: 'assets/images/sponsors/CodelyTV.jpg', name: 'Codely Tv', url: 'https://codely.tv/' },
+		{
+			photo: 'assets/images/sponsors/codigofacilito.jpg',
+			name: 'Codigo facilito',
+			url: 'https://codigofacilito.com/'
+		},
+		{
+			photo: 'assets/images/sponsors/DominiCode.jpg',
+			name: 'Domini Code',
+			url: 'https://dominicode.com/'
+		}
 	];
 
 	showMenuComunnity(): void {
@@ -19,6 +27,8 @@ export class MenuCommunityComponent {
 	}
 
 	focuslost(): void {
-		this.showMenu = false;
+		setTimeout(() => {
+			this.showMenu = false;
+		}, 200);
 	}
 }

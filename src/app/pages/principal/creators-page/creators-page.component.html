@@ -1,0 +1,28 @@
+<div class="container" *ngIf="listCreators.length > 0">
+	<app-team-leader
+		*ngFor="let item of listCreators"
+		[item]="item"
+		[teamLeaders]="item"
+	></app-team-leader>
+</div>
+
+<div class="container" *ngIf="listCreators.length === 0">
+	<mat-card class="card-skeleton" *ngFor="let item of listSkeleton">
+		<div class="name">
+			<ngx-skeleton-loader count="1" [theme]="{ height: '150px' }"></ngx-skeleton-loader>
+		</div>
+
+		<div class="how">
+			<ngx-skeleton-loader count="3" [theme]="{ height: '40px' }"></ngx-skeleton-loader>
+		</div>
+
+		<div class="button">
+			<div class="item">
+				<ngx-skeleton-loader count="1" [theme]="{ height: '40px' }"></ngx-skeleton-loader>
+			</div>
+			<div class="item">
+				<ngx-skeleton-loader count="1" [theme]="{ height: '40px' }"></ngx-skeleton-loader>
+			</div>
+		</div>
+	</mat-card>
+</div>

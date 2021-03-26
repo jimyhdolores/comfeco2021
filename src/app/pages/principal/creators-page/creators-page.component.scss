@@ -1,0 +1,39 @@
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 1em;
+	padding: 1em;
+	.card-skeleton {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 32em;
+		min-width: 10em;
+		gap: 1em;
+
+		.name,
+		.how,
+		.button {
+			width: 100%;
+		}
+
+		.button {
+			display: flex;
+			justify-content: space-between;
+			gap: 1em;
+			.item {
+				width: 100%;
+			}
+		}
+	}
+}
+
+@media (max-width: 475px) {
+	.container {
+		.card-skeleton {
+			width: 20em;
+		}
+	}
+}

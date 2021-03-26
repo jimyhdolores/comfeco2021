@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CommunitysPageComponent } from './communitys-page/communitys-page.component';
+import { CreatorsPageComponent } from './creators-page/creators-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { ProfilePageComponent } from './profile-page/profile-page.component';
 
@@ -11,6 +13,14 @@ const routes: Routes = [
 	{
 		path: 'profile',
 		component: ProfilePageComponent
+	},
+	{
+		path: 'communitys',
+		component: CommunitysPageComponent
+	},
+	{
+		path: 'creators',
+		component: CreatorsPageComponent
 	}
 ];
 

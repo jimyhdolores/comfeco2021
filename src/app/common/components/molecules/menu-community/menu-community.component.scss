@@ -44,18 +44,14 @@
 
 	&.show {
 		width: 17em;
-		height: 31em;
+		height: auto;
 		transition: 200ms;
 	}
 
 	&.hidden {
 		width: 4em;
 		height: 0;
-		transition: 120ms;
-	}
-
-	:focus {
-		background-color: red;
+		transition: 300ms;
 	}
 }
 

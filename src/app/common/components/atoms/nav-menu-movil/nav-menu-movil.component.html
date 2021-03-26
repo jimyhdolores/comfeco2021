@@ -23,7 +23,11 @@
 				<li>
 					<div class="placeholder">
 						<div class="upside">
-							<a class="button" matTooltip="Comunidades" matTooltipPosition="right"
+							<a
+								(click)="navigateComunitys()"
+								class="button"
+								matTooltip="Comunidades"
+								matTooltipPosition="right"
 								><i class="fas fa-chalkboard-teacher"></i
 							></a>
 						</div>
@@ -32,7 +36,7 @@
 				<li>
 					<div class="placeholder">
 						<div class="upside">
-							<a class="button" matTooltip="Creadores de contenido"
+							<a (click)="navigateCreators()" class="button" matTooltip="Creadores de contenido"
 								><i class="fas fa-photo-video"></i
 							></a>
 						</div>

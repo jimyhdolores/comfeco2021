@@ -12,4 +12,12 @@ export class NavMenuMovilComponent {
 	navigatePrincipal(): void {
 		void this.router.navigateByUrl(PathProject.PRINCIPAL);
 	}
+
+	navigateComunitys(): void {
+		void this.router.navigateByUrl(PathProject.COMUNITYS);
+	}
+
+	navigateCreators(): void {
+		void this.router.navigateByUrl(PathProject.CREATORS);
+	}
 }

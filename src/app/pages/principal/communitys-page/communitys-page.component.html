@@ -1,0 +1,24 @@
+<div class="container" *ngIf="listEvents.length > 0">
+	<app-events *ngFor="let item of listEvents" [item]="item"></app-events>
+</div>
+
+<div class="container" *ngIf="listEvents.length === 0">
+	<mat-card class="card-skeleton" *ngFor="let item of listSkeleton">
+		<div class="name">
+			<ngx-skeleton-loader count="1" [theme]="{ height: '150px' }"></ngx-skeleton-loader>
+		</div>
+
+		<div class="how">
+			<ngx-skeleton-loader count="3" [theme]="{ height: '40px' }"></ngx-skeleton-loader>
+		</div>
+
+		<div class="button">
+			<div class="item">
+				<ngx-skeleton-loader count="1" [theme]="{ height: '40px' }"></ngx-skeleton-loader>
+			</div>
+			<div class="item">
+				<ngx-skeleton-loader count="1" [theme]="{ height: '40px' }"></ngx-skeleton-loader>
+			</div>
+		</div>
+	</mat-card>
+</div>
