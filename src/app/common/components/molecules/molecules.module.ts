@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { RouterModule } from '@angular/router';
 import { NguCarouselModule } from '@ngu/carousel';
 import { AtomModule } from '@team31/components-atoms/atoms.module';
 import { ActivitiesComponent } from './activities/activities.component';
@@ -51,7 +52,8 @@ import { UserEditComponent } from './user-edit/user-edit.component';
 		MatSlideToggleModule,
 		MatButtonModule,
 		FormsModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
+		RouterModule
 	],
 	exports: [
 		CarouselComponent,
