@@ -143,7 +143,6 @@ export const SPONSOR_ITEMS: Sponsor[] = [
 	{ photo: 'assets/images/sponsors/DominiCode.jpg', name: 'Domini Code' },
 	{ photo: 'assets/images/sponsors/Egghead.jpg', name: 'Egghead' },
 	{ photo: 'assets/images/sponsors/FernandoHerrera.jpg', name: 'Fernando Herrera' },
-	{ photo: 'assets/images/sponsors/huawei.jpg', name: 'Huawei' },
 	{ photo: 'assets/images/sponsors/JoseDimasLujan.jpg', name: 'Jose Dimas Lujan' },
 	{ photo: 'assets/images/sponsors/LatamDev.jpg', name: 'LatamDev' },
 	{ photo: 'assets/images/sponsors/LeonidasEsteban.jpg', name: 'Leonidas Esteban' },

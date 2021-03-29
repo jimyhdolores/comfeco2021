@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { IEvent, IEventUser } from '@team31/models/interfaces/profile-module.interface';
 import { MessageService } from '@team31/services/message.service';
+import { ModalService } from '@team31/services/modal.service';
 import { ProfileService } from '@team31/services/profile.service';
 import { UserdataService } from '@team31/services/userdata.service';
 import { Util } from './../../../static/util';
@@ -15,7 +16,8 @@ export class EventsComponent {
 	constructor(
 		private authService: ProfileService,
 		private userdataService: UserdataService,
-		private messageService: MessageService
+		private messageService: MessageService,
+		private modalService: ModalService
 	) {}
 
 	clickParticipate(): void {
@@ -51,5 +53,9 @@ export class EventsComponent {
 			this.messageService.openError('Ups, ocurrio un error intenta nuevamente.', 'end', 'top');
 			console.error('Error al actualizar el perfil del usuario: ', error);
 		}
+	}
+
+	showInformation(): void {
+		this.modalService.open({ titleModal: this.item.name, contentModal: this.item.description });
 	}
 }

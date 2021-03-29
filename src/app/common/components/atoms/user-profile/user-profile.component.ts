@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '@team31/services/auth.service';
-import { HeaderService } from '@team31/services/header.service';
+import { ModalService } from '@team31/services/modal.service';
 import { UserdataService } from '@team31/services/userdata.service';
 import { PathProject } from '@team31/static/path-project';
 
@@ -15,7 +15,7 @@ export class UserProfileComponent implements OnInit {
 		private route: Router,
 		private auth: AuthService,
 		private userdataService: UserdataService,
-		private headerService: HeaderService
+		private modalService: ModalService
 	) {}
 
 	nameUser = 'Actualiza tu Nick';
@@ -33,5 +33,11 @@ export class UserProfileComponent implements OnInit {
 	clickCloseSession(): void {
 		this.auth.logout();
 		void this.route.navigateByUrl(PathProject.LOGIN);
+	}
+	showNotification(): void {
+		this.modalService.open({
+			titleModal: 'Notificaciones',
+			contentModal: 'No tienes notificaciones'
+		});
 	}
 }

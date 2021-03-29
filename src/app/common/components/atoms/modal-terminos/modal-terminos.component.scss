@@ -1,14 +1,12 @@
-*{
-  box-sizing: content-box;
-  margin: 0;
+* {
+	box-sizing: content-box;
+	margin: 0;
 }
 
-.container{
-  display: block;
-  width: 70vw;
-  height: 70vh;
-  margin: 0 auto;
-  @media screen and (max-width: 570px) {
-    font-size: 10px;
-  }
+.container {
+	display: block;
+	margin: 0 auto;
+	@media screen and (max-width: 570px) {
+		font-size: 10px;
+	}
 }

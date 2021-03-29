@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ModalService } from '@team31/services/modal.service';
-import { VariableStatic } from 'src/app/common/static/variable-static';
+import { VariableStatic } from '@team31/static/variable-static';
 
 @Component({
 	selector: 'app-footer',
